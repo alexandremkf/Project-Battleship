@@ -1,0 +1,26 @@
+{
+  "name": "project-battleship",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandremkf/Project-Battleship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandremkf/Project-Battleship/issues"
+  },
+  "homepage": "https://github.com/alexandremkf/Project-Battleship#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}
