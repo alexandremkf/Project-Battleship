@@ -1,0 +1,117 @@
+/* styles.css - grid básico para mostrar tabuleiros */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 16px;
+  background: #f6f8fa;
+  color: #222;
+}
+
+#ui-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 36px);
+  grid-auto-rows: 36px;
+  gap: 4px;
+  margin-bottom: 18px;
+  background: #e9eef2;
+  padding: 8px;
+  width: max-content;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.cell {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(180deg,#dfe7ec,#cfdbe3);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  user-select: none;
+}
+
+/* visuals for ship/hit/miss */
+.cell.ship {
+  background: linear-gradient(180deg,#9fb7c7,#7fa6b9);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.06);
+}
+
+.cell.hit {
+  position: relative;
+  background: linear-gradient(180deg,#ffb3b3,#ff8f8f);
+}
+
+.cell.miss {
+  position: relative;
+  background: linear-gradient(180deg,#fff7b3,#ffe88f);
+}
+
+/* small animations */
+.anim-hit {
+  animation: pop 400ms ease;
+}
+.anim-miss {
+  animation: shake 400ms ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(.8); }
+  100% { transform: scale(1); }
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* placement panel */
+#placement-panel {
+  margin-top: 12px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e6ea;
+  width: max-content;
+}
+
+.ship-item {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #f0f6fa;
+  border: 1px dashed #b7c7d4;
+  margin-bottom: 6px;
+  cursor: grab;
+}
+
+.remaining-ships {
+  font-size: 13px;
+  color: #444;
+}
+
+#message {
+  min-width: 260px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e0e6ea;
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Battleship</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui-top">
+    <div id="message">Mensagem</div>
+    <button id="restart-btn" class="btn">Reiniciar</button>
+    <button id="autoplace-btn" class="btn">Auto-place</button>
+    <button id="toggle-placement-btn" class="btn">Toggle Placement</button>
+    <button id="start-game-btn" class="btn" style="display:none;">Iniciar Jogo</button>
+    <button id="placement-direction" class="btn">Direction: horizontal</button>
+
+    <select id="select-ship-length">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+    </select>
+  </div>
+
+  <h2>Seu Tabuleiro</h2>
+  <div id="player-board" class="board"></div>
+
+  <h2>Tabuleiro Inimigo</h2>
+  <div id="computer-board" class="board"></div>
+
+  <div id="placement-panel"></div>
+
+  <script type="module">
+    import domController from "./src/dom.js";
+    // inicializa e guarda no window para debug rápido
+    window.app = domController();
+    console.log("domController inicializado");
+  </script>
+</body>
+</html>
